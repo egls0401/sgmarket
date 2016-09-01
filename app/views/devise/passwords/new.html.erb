@@ -1,13 +1,16 @@
 <div class="container" style="margin-top:50px">
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <div class="field">
-      <p style="font-weight:bold; font-style:italic;">이메일이 아닌 아이디를 입력해주세요</p>
+    <div class = "field">
+      <i class ="material-icons prefix" style = "color:#ffab40">vpn_key</i>
+      <span style="font-size:13pt;color:#8c8c8c; font-weight:bold">비밀번호 변경</span><br>
     </div>
     <div class="field">
       <p><%= f.label :아이디 %><br />
       <%= f.text_field :username %></p>
     </div>
-  
+    <div class="field"><br>
+      <p style="font-style:italic;">이메일이 아닌 아이디를 입력해주세요</p>
+    </div>
   
      <div class="actions" >
       <a class="waves-effect waves-light btn deep-orange lighten-2">
