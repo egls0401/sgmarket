@@ -216,7 +216,7 @@ class HomeController < ApplicationController
   
   def goadmin
     @adminuser=User.find_by(id: params[:user_id])
-    @adminuser.admin=true
+    @adminuser.admin = 1
     @adminuser.save
     
     redirect_to :back
