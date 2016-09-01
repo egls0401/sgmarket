@@ -19,7 +19,7 @@ ko:
       send_instructions: "이메일로 이메일 주소 인증 지침이 전송되었습니다."
       send_paranoid_instructions: "이메일 주소가 이미 등록되어 있으며, 이메일 주소 인증 지침 메일을 잠시 후 받을 수 있습니다."
     failure:
-      already_authenticated: "이미 로그인되어 y있습니다."
+      already_authenticated: "이미 로그인되어 있습니다."
       inactive: "계정이 아직 활성화되지 않았습니다."
       invalid: "이메일 혹은 비밀번호가 틀립니다."
       last_attempt: "이번 로그인 시도를 실패하면 계정이 잠깁니다."
@@ -44,7 +44,7 @@ ko:
         instruction: "누군가 당신의 비밀번호를 변경하는 링크를 요청했으며, 다음의 링크에서 비밀번호 변경이 가능합니다."
         instruction_2: "이를 요청하지 않으셨다면, 이 메일을 무시하십시오."
         instruction_3: "위 링크에 접속하여 새로운 비밀번호를 생성하기 전까지, 귀하의 비밀번호는 변경되지 않습니다."
-        subject: "AskCulture - 공모전 비밀번호 변경 안내"
+        subject: " 비밀번호 변경 안내"
       unlock_instructions:
         action: "본인 계정 잠금 해제"
         greeting: "%{recipient}님 안녕하세요!"
