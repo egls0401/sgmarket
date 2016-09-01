@@ -2,16 +2,16 @@
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <div class = "field">
       <i class ="material-icons prefix" style = "color:#ffab40">vpn_key</i>
-      <span style="font-size:13pt;color:#8c8c8c; font-weight:bold">비밀번호 변경</span><br>
-    </div>
+      <span style="font-size:13pt;color:#8c8c8c; font-weight:bold">비밀번호 변경</span>
+    </div><br>
     <div class="field">
       <p><%= f.label :아이디 %><br />
       <%= f.text_field :username %></p>
     </div>
-    <div class="field"><br>
+    <div class="field">
       <p style="font-style:italic;">이메일이 아닌 아이디를 입력해주세요</p>
     </div>
-  
+  <br>
      <div class="actions" >
       <a class="waves-effect waves-light btn deep-orange lighten-2">
       <%= f.submit "비밀번호를 초기화 할 수 있는 방법을 보내주세요" %></a>
