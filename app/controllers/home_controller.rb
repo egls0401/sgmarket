@@ -213,4 +213,12 @@ class HomeController < ApplicationController
     
     redirect_to :back
   end
+  
+  def goadmin
+    @adminuser=User.find_by(id: params[:user_id])
+    @adminuser.admin=true
+    @adminuser.save
+    
+    redirect_to :back
+  end
 end

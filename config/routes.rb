@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   get '/myinfo' => 'home#myinfo'
   
   get '/home/change_pic' => 'home#change_pic'
+  
+  get '/home/goadmin' => 'home#goadmin'
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
