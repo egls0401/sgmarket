@@ -46,8 +46,7 @@ Rails.application.configure do
    :authentication => :plain,
    :domain         => ENV['MAILER_DOMAIN'],
    :user_name      => ENV['MAILER_USERNAME'],
-   :
-   password       => ENV['MAILER_PASSWORD']
+   :password       => ENV['MAILER_PASSWORD']
   }
   config.action_mailer.default_url_options = {host: 'http://mysgmarket.com/'}
 end
