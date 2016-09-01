@@ -51,8 +51,24 @@
       <div class="nav-wrapper" style="background-color:#e57373; width: auto">
         <a href="/home/index" class="brand-logo center" style="color:#e57373; height:100%"><img src="<%= image_path 'logo.png'%>" style="height:100%;"></a>
       </div>
+      
     </nav>
   </div>
+  
+    <div class="row" style="margin-bottom:10px">
+    
+      <div class="nav-wrapper" style="background-color:#ffffff; width: auto">
+        <i class="material-icons"  style="color:#4db6ac">mode_edit</i><a href="/home/write" style="color:#8c8c8c; font-weight:bold" class="center">글쓰기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <% if current_user %>
+          <i class="material-icons"  style="color:#ffd54f">input</i><a href="/users/sign_out" style="color:#8c8c8c; font-weight:bold">로그아웃</a>
+        <% else %>
+          <i class="material-icons"  style="color:#ffd54f">vpn_key</i><a href="/users/sign_in" class="center" style="color:#8c8c8c; font-weight:bold">로그인</a>
+        <% end %>
+      </div>
+      
+  </div>
+  
+  
   
   <div class="container">
   <!--Side nav로 해보자-->
