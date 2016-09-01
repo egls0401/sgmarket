@@ -1,0 +1,33 @@
+<div class="row">
+
+
+<a href="#" data-activates="slide-out" class="button-collapse col s1 left"><i class="material-icons" style="margin-top:10px; margin-right:20px; font-size:3.5rem; color:#e57373;">toc</i></a>
+</div>
+<ul class="collection with-header">
+  <li class="collection-item avatar">
+    <% img_path = current_user.userpic + '.png' %>
+    <img src="<%= image_path img_path %>" class="circle">
+    <% if current_user.admin? %>
+      <p>어드민계정입니다.</p>
+    <% end %>
+    <p style="color:grey; font-weight:bold" ><%=current_user.username%></p>
+    <p style="color:grey; font-weight:bold"><%= current_user.email %><br>
+       <a href="/users/edit" style="color:#7986cb">정보 수정하러가기</a>
+    </p>
+    <a href="#!" class="secondary-content"></a>
+  </li>
+  <li class="collection-item avatar">
+    <i class="material-icons circle blue lighten-2">mode_edit</i>
+    <a href="/home/show_user_post" style="color:grey; font-weight:bold">내가 <span style="color:#7986cb">쓴</span> 글</a><br>
+    <a href="/home/show_reply_post" style="color:grey; font-weight:bold">내가 <span style="color:#7986cb">댓글을 단</span> 글<br>
+    <a href="/home/alarm" style="color:grey; font-weight:bold">내 글에 <span style="color:#7986cb">달린 댓글</span></a>
+  </li>
+  
+  <li class="collection-item avatar">
+    <i class="material-icons circle deep-orange lighten-2">thumb_up</i>
+    <form action="/home/change_pic" method="GET">
+      <input type = "hidden" value = "<%= current_user.id %>" name ="user_id">
+      <button class="btn waves-orange btn deep-orange lighten-4" style="font-weight:bold"  type="submit">프로필 표정 바꾸기</button>
+    </form>  
+  </li>
+</ul>

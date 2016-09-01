@@ -1,0 +1,92 @@
+<!--<h1>수정하기페이지</h1>-->
+<div style="margin-top:30px">
+<form action="/do_update/<%= @upd_post.id%>" method="POST"  enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="title_id">제목</label>
+    <input type = "hidden" value = "<%= current_user.email %>" name ="user_email">
+    <input type="text" class="form-control" value = "<%= @upd_post.title%>" name="title" id="title_id">
+  </div>
+  
+    <div class="form-group">
+      <label for="exampleInputPassword1">내용</label>
+      <textarea class="materialize-textarea" rows="5" name="content" id="content_id"><%= @upd_post.content%></textarea>
+    </div> 
+    
+    <div class="form-group">  
+      <label for="exampleInputPassword1">가격</label>
+      <input type="text" class="form-control" name="price" id="price_id" value="<%= @upd_post.price %>" placeholder="가격을 입력하세요">
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleInputPassword1">연락처</label>
+      <input type="text" class="form-control" name="contact" id="contact_id" value="<%= @upd_post.contact %>" placeholder="연락처를 입력하세요">
+    </div>
+  
+    <div class="row">
+       <div class="input-field col s10" >
+            <select class="form-control" name="category" id="category_id">
+              <option value="" disabled selected>카테고리를 입력해 주세요</option>
+              <option value="의류">의류</option>
+              <option value="코스메틱">코스메틱</option>
+              <option value="책">책</option>
+              <option value="티켓">티켓</option>
+              <option value="기타">기타</option>
+            </select>
+        </div>
+      
+      
+
+    <div class="input-field col s4">
+    <input id="last_name" name="hashtag1" type="text" class="validate" >  
+    <%unless @upd_post.tags[1].name.empty?%>
+       <label for="last_name"><%=@upd_post.tags[1].name%></label>
+    <%else%>
+       <label for="last_name">Hashtag1</label>
+    <%end%>
+    </div>
+      
+      
+    <div class="input-field col s4">
+    <input id="last_name" name="hashtag2" type="text" class="validate">  
+    <%unless @upd_post.tags[2].name.empty? %>
+       <label for="last_name"><%=@upd_post.tags[2].name%></label>
+    <%else%>
+       <label for="last_name">Hashtag2</label>
+    <%end%>
+    </div>
+    
+   
+    <div class="input-field col s4" >
+    <input id="last_name" name="hashtag3" type="text" class="validate">  
+    <%unless @upd_post.tags[3].name.empty? %>
+       <label for="last_name"><%=@upd_post.tags[3].name%></label>
+    <%else%>
+       <label for="last_name">Hashtag3</label>
+    <%end%>
+    </div>
+    <div class="input-field col s12">
+      <p style="font-style:italic">*작성하지 않으면 기존의 해시태그는 삭제됩니다!</p>
+    </div>
+  </div> 
+
+        
+    <div class="form-group">
+      <div class="file-field input-field">
+        <div class="btn waves-effect waves-light" style="background-color:#9e9e9e">
+          <span>사진첨부</span>
+          <!--<input type="file" name = "pic" id="exampleInputFile">-->
+          <%#= file_field_tag :avatars, multiple: true %>
+          
+          <!-- set name like array -->
+          <input type="file" name="avatars[]" multiple="true">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+    </div>
+   <button class="btn waves-effect waves-light" style="background-color:#e57373" type="submit">수정하기</button>
+  </div>
+
+</form>
+</div>

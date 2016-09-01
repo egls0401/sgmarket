@@ -1,0 +1,47 @@
+   <!-- index 페이지랑 동일한 위치에 side nav botton이랑 search bar -->
+  <div class="row">
+    <form class="col s12" style="height:73.5px;" action="/home/search">
+      <div class="row">
+        <a href="#" data-activates="slide-out" class="button-collapse col s1 left"><i class="material-icons" style="margin-top:10px; font-size:3.5rem; color:#e57373;">toc</i></a>
+        <div class="input-field col s7 offset-s1" style="color:#e57373;">
+          <i class="material-icons prefix" style="margin-top:5px; color:#e57373;">search</i>
+          <input id="icon_prefix" type="text" class="validate" name="search">
+          <label for="icon_prefix">Search</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row" >
+    <div class = "row">
+      <i class ="material-icons prefix" style = "color:#ffab40">receipt</i>
+      <span style="font-size:13pt;color:#8c8c8c; font-weight:bold">작성글 목록</span>
+    </div>
+    <% @myposts.each do |post| %>
+      <% if post.nil?%>
+       <span style="font-size:13pt;color:#8c8c8c; font-weight:bold">사용자가 작성한 글이 없습니다.</span>
+      <% else %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail hovereffect">
+          <% if post.post_images.count == 0 || post.post_images[0].avatar.url.nil? || post.finished == true %>
+            <img class = "img-responsive" src="<%=post.image_url%>" style = "height: 100%">
+          <% else %>
+            <img class="img-responsive" src="<%= post.post_images[0].avatar.url%>" style = "height: 100%">
+          <% end %>
+          <div class="overlay">
+            <h2><%=post.title%></h2>
+            <a class="info" href="/view_each/<%=post.id%>">둘러보기</a>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+ 
+  <div style="width:320px"> <%=paginate @myposts %></div>  
+  
+  <div class = "row">
+    <i class ="material-icons prefix" style = "color:#8c8c8c">restore</i>
+    <a href ="javascript:history.back()" style="font-size:13pt;color: #ffab40"> 뒤로 돌아가기</a>
+  </div>
+  

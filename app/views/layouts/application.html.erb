@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+  <title>SG MARKET</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--<link href="/assets/home.css" rel="stylesheet">-->
+  
+  <style type="text/css">
+    .page-footer {
+     padding-top: 0px !important;  
+    }
+    .parallax-container {
+      height: 650px;
+    }
+    .slider .slides img {
+      height: auto;
+      width: auto;
+    }
+  </style>
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Custom CSS -->
+    <!--<link href="css/thumbnail-gallery.css" rel="stylesheet">-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+  
+  <div class="navbar-fixed" style="margin-bottom:10px">
+    <nav>
+      <div class="nav-wrapper" style="background-color:#e57373; width: auto">
+        <a href="/home/index" class="brand-logo center" style="color:#e57373; height:100%"><img src="<%= image_path 'logo.png'%>" style="height:100%;"></a>
+      </div>
+    </nav>
+  </div>
+  
+  <div class="container">
+  <!--Side nav로 해보자-->
+
+  <ul id="slide-out" class="side-nav show-on-large">
+    <li><div class="userView">
+      <img class="background" style = "width: auto; height: 300px;" src="<%= image_path'navbar_background.jpg'%>">
+      <% unless current_user.nil?%>
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <% img_path_sidebar = current_user.userpic + '.png' %>
+            <img src="<%=image_path img_path_sidebar %>" class="circle">
+            <!--<i class="large material-icons; circle">hi</i>-->
+            <a style="font-weight:bold; color:grey; padding:0px;  margin:0px; font-size:1rem; border-collapse: collapse;border-spacing: 0;" href = "/home/myinfo" ><%= current_user.username %></a>
+          </li>
+        </ul>
+      <% end %>
+    </div></li>
+    <li><a href="/home/tag/의류" style="color:#8c8c8c; font-weight:bold"><i class="material-icons" style="color:#81d4fa">loyalty</i>  의류</a></li>
+    <li><a href="/home/tag/코스메틱" style="color:#8c8c8c; font-weight:bold"><i class="material-icons" style="color:#4db6ac">loyalty</i>  화장품</a></li>
+    <li><a href="/home/tag/책" style="color:#8c8c8c; font-weight:bold"><i class="material-icons" style="color:#ffd54f">loyalty</i>  서적</a></li>
+    <li><a href="/home/tag/티켓" style="color:#8c8c8c; font-weight:bold"><i class="material-icons" style="color:#ff8a65">loyalty</i>  쿠폰/티켓</a></li>
+    <li><a href="/home/tag/기타" style="color:#8c8c8c; font-weight:bold"><i class="material-icons" style="color:#ef5350">loyalty</i>  기타</a></li>
+  </ul>
+  
+  <div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large  red accent-1">
+      <i class="material-icons">menu</i>
+    </a>
+
+
+    <ul>
+      <% if current_user %>
+      <li><a class="btn-floating #8c9eff #ea80fc blue lighten-3" href = "/home/myinfo"><i class="material-icons">person_pin</i></a></li>
+      <li><a class="btn-floating teal lighten-2" href="/home/write"><i class="material-icons">mode_edit</i></a></li>
+      <li><a class="btn-floating amber lighten-2" href="javascript:history.back()"><i class="material-icons">fast_rewind</i></a></li>
+      <li><a class="btn-floating deep-orange lighten-2" href="/users/sign_out"><i class="material-icons">clear</i></a></li>
+      <% else %>
+      <li><a class="btn-floating deep-orange lighten-2" href="/users/sign_in"><i class="material-icons">vpn_key</i></a></li>
+      <% end %>
+    </ul>
+    </div>     
+
+    <main>  
+  
+      <%= yield %>
+
+    </main>
+  </div>
+
+  <div style="margin-top :10px">
+  <footer class="page-footer" >
+
+    <div class="footer-copyright">
+      <div class="container">
+      © 2016 Copyright Likelion Sogang
+      <a target="_blank" class="grey-text text-lighten-4 right" href="https://www.facebook.com/sogangmarket">Facebook</a>
+      </div>
+    </div>
+    
+
+  </footer>
+  </div>   
+
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <!--<script src="js/jquery.js"></script>-->
+
+    <!-- Bootstrap Core JavaScript -->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+  <script>
+   $(document).ready(function(){
+   $('.slider').slider();
+    });
+    
+   $(".button-collapse").sideNav();
+  
+   $(document).ready(function() {
+
+  var viewportHeight = $(document).height();
+
+  $('main').css('min-height', viewportHeight - 150 ); // minus size of your header & footer
+
+  });
+  
+  $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+
+  </script>
+  
+</body>
+</html>

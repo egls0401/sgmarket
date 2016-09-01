@@ -1,0 +1,36 @@
+
+<!-- side nav랑 search bar -->
+<div class="row">
+  <form class="col s12" style="height:73.5px;" action="/home/search">
+    <div class="row">
+      <a href="#" data-activates="slide-out" class="button-collapse col s1 left"><i class="material-icons" style="margin-top:10px; font-size:3.5rem; color:#e57373;">toc</i></a>
+      <div class="input-field col s7 offset-s1" style="color:#e57373;">
+        <i class="material-icons prefix" style="margin-top:5px; color:#e57373;">search</i>
+        <input id="icon_prefix" type="text" class="validate" name="search">
+        <label for="icon_prefix">Search</label>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="row" id="box-search" >
+  <% @posts.each do |p| %>
+    <div class="col-sm-6 col-md-4">
+      <!-- change -->
+      <div class = "thumbnail hovereffect">
+        <% if p.post_images.count == 0 || p.post_images[0].avatar.url.nil? || p.finished == true %>
+          <img class="img-responsive" src="<%=p.image_url%>">
+        <% else %>
+          <img class="img-responsive" src="<%= p.post_images[0].avatar.url%>" style="height:100%"> 
+        <% end %>
+         <div class="overlay">
+           <h2><%=p.title%></h2>
+           <a class="info" href="/view_each/<%=p.id%>">둘러보기</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+ <div class="pagination" style="min-width:320px"> <%=paginate @posts, :window => 2%></div>

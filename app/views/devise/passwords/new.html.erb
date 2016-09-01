@@ -1,0 +1,17 @@
+<div class="container" style="margin-top:50px">
+  <p>비밀번호 까먹으면 페이지</p>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    
+  
+    <div class="field">
+      <p><%= f.label :아이디 %><br />
+      <%= f.text_field :username %></p>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "비밀번호를 초기화 할 수 있는 방법을 보내주세요" %>
+    </div>
+  <% end %>
+  
+  
+</div>

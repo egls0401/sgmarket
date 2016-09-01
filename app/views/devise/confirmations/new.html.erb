@@ -1,0 +1,19 @@
+<div style="margin-top:50px">
+<p style="font-weight:bold; color:#8c8c8c">가입하신 서강대 메일을 적어주세요</p>
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+
+  <div class="field">
+    <p><%= f.label :이메일 %><br />
+    <%= f.text_field :username, autofocus: true %></p>
+  </div>
+
+  <div class="actions">
+    <a class="waves-effect waves-light btn deep-orange lighten-2"><%= f.submit "인증메일 전송" %></a>
+  </div>
+  
+<% end %>
+
+</div>
+<script>
+  
+</script>

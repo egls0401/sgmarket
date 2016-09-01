@@ -1,0 +1,17 @@
+<!--side nav 버튼 추가 완료 -->
+  <div class="row">
+      <a href="#" data-activates="slide-out" class="button-collapse col s1 left"><i class="material-icons" style="margin-top:10px; font-size:3.5rem; color:#e57373;">toc</i></a>
+  </div>
+ 
+  <ul class="collection with-header">
+
+    <% current_user.posts.each do |p| %>
+        <% new_count=p.replies.where("id> ?", p.replycount).count %>
+        <% if new_count>0%>
+          <li class="collection-item"><div><%=p.title%>에 <%=new_count%>개의 댓글이 추가되었습니다<br><a href="/view_each/<%=p.id%>">보러가기</a><br></div></li>
+        <% else %>
+           <li class="collection-item"><div>'<%=p.title%>'에 새로 달린 댓글이 없습니다<br></div></li>
+        <% end %>  
+    <% end %>   
+        
+  </ul>
