@@ -73,7 +73,7 @@
           <% @one_post.replies.each do |x| %>
            <% img_path_reply = x.user.userpic + '.png' %>
            <p> <img src="<%=image_path img_path_reply %>" class="circle" style="width:30px; height:auto;"> &nbsp;<span style="font-weight:bold; color:#7986cb"><%= x.user.username%></span>&nbsp;&nbsp;&nbsp;<span style="font-weight:bold; color:#8c8c8c"><%= x.content %></span> 
-           <% if user_signed_in? && current_user.id==x.user_id %>
+           <% if user_signed_in? && current_user.id==x.user_id || current_user.admin? %>
            <a href="/delete_reply/<%=x.id%>">[x]</a>
            <% end %>
            </p>

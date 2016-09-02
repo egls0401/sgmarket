@@ -1,10 +1,14 @@
 <!--side nav 버튼 추가 완료 -->
-  <div class="row">
-      <a href="#" data-activates="slide-out" class="button-collapse col s1 left"><i class="material-icons" style="margin-top:10px; font-size:3.5rem; color:#e57373;">toc</i></a>
-  </div>
- 
+<div class="row">
+  <a href="#" data-activates="slide-out" class="button-collapse col s1 left"><i class="material-icons" style="margin-top:10px; font-size:3.5rem; color:#e57373;">toc</i></a>
+</div>
+<div class = "row">
+  <i class ="material-icons prefix" style = "color:#ffab40">receipt</i>
+  <span style="font-size:13pt;color:#8c8c8c; font-weight:bold">내 글에 달린 댓글</span>
+</div>
+<div class="row">
   <ul class="collection with-header">
-
+    
     <% current_user.posts.each do |p| %>
         <% new_count=p.replies.where("id> ?", p.replycount).count %>
         <% if new_count>0%>
@@ -15,3 +19,9 @@
     <% end %>   
         
   </ul>
+</div>  
+<div class = "row">
+  <i class ="material-icons prefix" style = "color:#8c8c8c">restore</i>
+  <a href ="javascript:history.back()" style="font-size:13pt;color: #ffab40"> 뒤로 돌아가기</a>
+</div> 
+ 

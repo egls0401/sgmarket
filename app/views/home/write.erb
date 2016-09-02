@@ -1,17 +1,17 @@
 <div style="margin-top:30px">
 <form action="/home/complete" method="POST" enctype="multipart/form-data" >
   <input type = "hidden" value = "<%= current_user.email %>" name ="user_email">
-  <div class="input-field col">
+  <div class="form-group">
+    <label for="title_id">제목</label>
     <input type="text" class="form-control" name="title" id="title_id">
-    <label for="title">제목</label>
   </div>
-  <div class="input-field col">
-    <textarea class="materialize-textarea" name="content" id="content_id"></textarea>
+  <div class="form-group">
     <label for="content_id">내용</label>
-  </div>
-  <div class="input-field col">  
-    <input type="text" class="form-control" name="price" id="price_id">
+    <textarea class="materialize-textarea" rows="5" name="content" id="content_id"></textarea>
+  </div> 
+  <div class="form-group">  
     <label for="price_id">가격</label>
+    <input type="text" class="form-control" name="price" id="price_id">
   </div>
 
   <div class="row" >
