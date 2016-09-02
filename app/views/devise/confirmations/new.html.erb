@@ -4,11 +4,11 @@
 
   <div class="field">
     <p><%= f.label :이메일 %><br />
-    <%= f.text_field :email, autofocus: true %></p>
+    <%= f.text_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email%></p>
   </div>
 
   <div class="actions">
-    <a class="waves-effect waves-light btn deep-orange lighten-2"><%= f.submit "인증메일 전송" %></a>
+    <a class="waves-effect waves-light btn deep-orange lighten-2"><%= f.submit "인증메일 다시 전송" %></a>
   </div>
   
 <% end %>
