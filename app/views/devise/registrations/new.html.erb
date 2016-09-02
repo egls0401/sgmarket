@@ -2,7 +2,7 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     
     <div class="field">
-      <p><%= f.label :닉네임 %><br />
+      <p><%= f.label :아이디 %><em>아이디는 한글,영문 모두 가능합니다.</em><br />
       <%= f.text_field :username, autofocus: true %></p>
     </div>
     

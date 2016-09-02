@@ -31,14 +31,15 @@
       <button class="btn waves-orange btn deep-orange lighten-4" style="font-weight:bold"  type="submit">프로필 표정 바꾸기</button>
     </form>  
   </li>
-  
+
   <% if current_user.admin? %>
     <li class="collection-item avatar">
-      <i class="material-icons circle deep-orange lighten-2">thumb_up</i>
+      <i class="material-icons circle green darken-2">done_all</i>
       <form action="/home/please" method="GET">
-        <input type = "hidden" value = "이플" name ="pleasedoit">
-        <button class="btn waves-effect waves-light" style="background-color:#e57373" type="submit">가입시키기</button>
-       </form>
+
+      <input type = "text" placeholder= "가입시킬애아이디" name ="pleasedoit" style="width: 40%">
+      <button class="btn waves-effect waves-light" style="background-color:#e57373" type="submit">가입시키기</button>
+    </form>
     </li>
   <% end %>
 </ul>
