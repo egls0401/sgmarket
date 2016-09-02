@@ -214,5 +214,12 @@ class HomeController < ApplicationController
     redirect_to :back
   end
   
+  def please
+    @doit=User.find_by(username: params[:pleasedoit])
+    @doit.confirmed_at=Time.now
+    @doit.save
+    
+    redirect_to :back
+  end
 
 end

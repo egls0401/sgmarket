@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   
   get '/home/change_pic' => 'home#change_pic'
   
+  get '/home/please' => 'home#please'
 
  
   # The priority is based upon order of creation: first created -> highest priority.
