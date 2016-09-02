@@ -8,12 +8,25 @@
   </div>
 
   <div class="actions">
-    <a class="waves-effect waves-light btn deep-orange lighten-2"><%= f.submit "인증메일 다시 전송" %></a>
+    <a class="waves-effect waves-light btn deep-orange lighten-2"><%= f.submit "인증메일 다시 전송",:onclick => "return validateform()"%></a>
   </div>
   
 <% end %>
 
 </div>
+
+
 <script>
-  
+  function validateform() {
+    var x = $('input#user_email').val();
+    if (x.indexOf("@sogang.ac.kr") == -1)
+    {
+      alert("서강대 이메일로 가입해주세요");
+      return false;}
+    else
+    {
+      return true;}
+    
+}
 </script>
+
