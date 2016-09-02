@@ -9,15 +9,16 @@
     <img src="<%= image_path img_path %>" class="circle">
     <% if current_user.admin? %>
       <p>어드민계정입니다.</p>
+      <form action="/home/please" method="GET">
+      <input type = "hidden" value = "이플" name ="pleasedoit">
+      <button class="btn waves-effect waves-light" style="background-color:#e57373" type="submit">가입시키기</button>
+    </form>
     <% end %>
     <p style="color:grey; font-weight:bold" ><%=current_user.username%></p>
     <p style="color:grey; font-weight:bold"><%= current_user.email %><br>
        <a href="/users/edit" style="color:#7986cb">정보 수정하러가기</a>
     </p>
-    <form action="/home/please" method="GET">
-      <input type = "hidden" value = "이플" name ="pleasedoit">
-      <button class="btn waves-effect waves-light" style="background-color:#e57373" type="submit">가입시키기</button>
-    </form>
+
     <a href="#!" class="secondary-content"></a>
   </li>
   <li class="collection-item avatar">
