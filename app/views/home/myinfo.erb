@@ -9,10 +9,6 @@
     <img src="<%= image_path img_path %>" class="circle">
     <% if current_user.admin? %>
       <p>어드민계정입니다.</p>
-      <form action="/home/please" method="GET">
-      <input type = "hidden" value = "이플" name ="pleasedoit">
-      <button class="btn waves-effect waves-light" style="background-color:#e57373" type="submit">가입시키기</button>
-    </form>
     <% end %>
     <p style="color:grey; font-weight:bold" ><%=current_user.username%></p>
     <p style="color:grey; font-weight:bold"><%= current_user.email %><br>
@@ -28,11 +24,21 @@
     <a href="/home/alarm" style="color:grey; font-weight:bold">내 글에 <span style="color:#7986cb">달린 댓글</span></a>
   </li>
   
-  <li class="collection-item avatar">
+   <li class="collection-item avatar">
     <i class="material-icons circle deep-orange lighten-2">thumb_up</i>
     <form action="/home/change_pic" method="GET">
       <input type = "hidden" value = "<%= current_user.id %>" name ="user_id">
       <button class="btn waves-orange btn deep-orange lighten-4" style="font-weight:bold"  type="submit">프로필 표정 바꾸기</button>
     </form>  
   </li>
+  
+  <% if current_user.admin? %>
+    <li class="collection-item avatar">
+      <i class="material-icons circle deep-orange lighten-2">thumb_up</i>
+      <form action="/home/please" method="GET">
+        <input type = "hidden" value = "이플" name ="pleasedoit">
+        <button class="btn waves-effect waves-light" style="background-color:#e57373" type="submit">가입시키기</button>
+       </form>
+    </li>
+  <% end %>
 </ul>
