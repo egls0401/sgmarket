@@ -1,48 +1,41 @@
-<div class="container" style="margin-top:50px">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    
-    <div class="field">
-      <p><%= f.label :아이디 %><br />
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+  <div class="field">
+      <p><%= f.label :'아이디'%><br />
       <%= f.text_field :username %></p>
-    </div>
-    
-    <div class="field">
-      <p><%= f.label :이름 %><br />
-      <%= f.text_field :realname %></p>
-    </div>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :current_password %><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
   
-    <div class="field">
-      <%= f.label :이메일 %><br />
-      <%= f.email_field :email %>
-    </div>
-  
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <div class="field">
+    <%= f.label :'새 비밀번호' %> <i>(6글자 이상 입력해 주세요)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'새 비밀번호 확인' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
   
-  
-    <div class="field">
-      <%= f.label :현재_비밀번호 %><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :새_비밀번호 %> <i>비밀번호를 바꾸고 싶지 않으시면 그대로 놔두세요.</i><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :비밀번호_확인 %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-  
-  
-    <div class="actions" >
-      <a class="waves-effect waves-light btn deep-orange lighten-2">
-      <%= f.submit "수정하기" %></a>
-      <% end %>
-      <a class="waves-effect waves-light btn grey" ><%= button_to "계정탈퇴하기", registration_path(resource_name), data: { confirm: "정말 탈퇴하실건가요?" }, method: :delete %></a>
-    </div>
-   <hr>
-  <br><br><br>
-</div>
+  <div class="actions">
+   <a class="waves-effect waves-light btn deep-orange lighten-2">
+   <%= f.submit "변경하기" %></a>
+  </div>
+<% end %>
+  <br>
+  <a class="waves-effect waves-light btn grey" ><%= button_to "계정탈퇴하기", registration_path(resource_name), data: { confirm: "정말 탈퇴하실건가요?" }, method: :delete %></a>
+
