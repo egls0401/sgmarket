@@ -105,11 +105,9 @@ ko:
       year: 년
   views:
     pagination:
-      first: ""
-      last: ""
-      previous: ""
-      next: ""
-      truncate: ""
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
   errors:
     format: "%{attribute}%{message}"
     messages:
