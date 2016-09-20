@@ -14,9 +14,10 @@
     <div class="actions center">
       <a class="waves-effect waves-light btn deep-orange lighten-2" style="margin-bottom:10px;"><%= f.submit "로그인" %></a>
       <% end %>
-      <a class="waves-effect waves-light btn amber lighten-2" href="/users/sign_up" style="margin-bottom:10px;">가입</a>
+      <a class="waves-effect waves-light btn amber lighten-2" href="/users/sign_up" style="margin-bottom:10px;">이메일로 가입</a>
+      <a class="waves-effect waves-light btn green lighten-2" href="/home/kakao" style="margin-bottom:10px;">카톡으로 가입</a>
       <a class="waves-effect waves-light btn teal lighten-2" href="/users/password/new" style="margin-bottom:10px;">비밀번호 찾기</a>
-      <%= link_to "승인 다시 받기", new_confirmation_path(resource_name), class: "waves-effect waves-light btn green lighten-2", style: "margin-bottom:10px;" %>
+
     </div>
 
     <!--
