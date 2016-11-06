@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :require_login, except: [:index]
+  before_action :require_login, except: [:index, :kakao]
   
   def index
       @posts=Post.all.page(params[:page]).per(12).order("created_at DESC")
@@ -228,6 +228,9 @@ class HomeController < ApplicationController
     @givhimadmin.save
     
     redirect_to :back
+  end
+  
+  def kakao
   end
 
 end

@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 
   post 'home/write'
   get 'home/myinfo'
-
+  
+  post 'home/kakao'
+  get 'home/kakao' => 'home#kakao'
+  
   get 'delete/:post_id' => 'home#delete'
   post 'update_view/:post_id' => 'home#update_view'
   get 'update_view/:post_id' => 'home#update_view'
