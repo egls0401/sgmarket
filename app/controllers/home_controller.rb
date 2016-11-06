@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :require_login, except: [:index, :kakao]
+  before_action :require_login, except: [:index, :kakao, :view_each]
   
   def index
       @posts=Post.all.page(params[:page]).per(12).order("created_at DESC")
