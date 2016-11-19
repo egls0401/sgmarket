@@ -40,23 +40,23 @@
         <div class="card-content">
           
               <span class="card-title" style="color:#8c8c8c; font-weight:bold; display:inline"><%=@one_post.title %></span> 
-              <p style="text-align:right; font-size:9px; display:inline">&nbsp;<%= @one_post.created_at.in_time_zone("Asia/Seoul").strftime("%m월%d일 %H시") %></p>
+              <p style="text-align:right; font-size:10px; display:inline">&nbsp;<%= @one_post.created_at.in_time_zone("Asia/Seoul").strftime("%m월%d일 %H시") %></p>
               </nobr>
-              <p><%=simple_format @one_post.content %></p>
-              <p style="float:right"><span style="color:#ffab40; font-weight:bold">가격</span> <span style="font-weight:bold"><%= @one_post.price %></span></p>
+              <p><%=simple_format @one_post.content %></p><br>
+              <p style="float:right"><span style="color:#ffab40; font-weight:bold">가격</span> <span style="font-weight:bold"><%= @one_post.price %></span></p><br>
         </div>
-        
         <div class="card-content">
           <ul class="collection">
             <li class="collection-item avatar">
               <% if current_user.nil? %>
-                <% img_path_writer = @one_post.user.userpic + '.png' %>
+                <!--<% img_path_writer = @one_post.user.userpic + '.png' %>
                 <img src="<%= image_path img_path_writer %>" class="circle">
-                <!--<i class="large material-icons; circle">hi</i>-->
+                --><!--<i class="large material-icons; circle">hi</i>-->
 
-                <span class="title" style="font-weight:bold; color:grey">???</span>
-
-                <p>로그인 뒤 연락처를 확인할 수 있습니다 </p> <br>
+                <!--<span class="title" style="font-weight:bold; color:grey">???</span>-->
+                <i class="material-icons circle">shopping_cart</i>
+                <p>로그인 하시면 판매자의 연락처를 확인할 수 있습니다</p>
+                <p ><a href="/users/sign_in" style-"color:orange">로그인 하기</p></a>
               <% else %>
                 <% img_path_writer = @one_post.user.userpic + '.png' %>
                
