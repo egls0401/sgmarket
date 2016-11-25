@@ -2,26 +2,26 @@
   <div class="row">
     <div class="col s12 m6 offset-m3">
       <div class="card">
-        <div class="card-image">
-          
-          <div class="slider">
-            <ul class="slides">
+        <div class="card-image" >
+         
+         <div class="slider" >
+           <ul class="slides">
           <!--have to change this part -->
               <% unless @one_post.post_images.empty?  %>
                 <% if @one_post.finished == false %>
                   <% @one_post.post_images.each do |s| %>
                     <li>
-                    <img src="<%=s.avatar.url %>">
+                    <img class="materialboxed" src="<%=s.avatar.url %>">
                     </li>
                   <% end %>
                 <% else %>
                   <!--거래완료-->
                   <li>
-                  <img src=<%= @one_post.image_url %>>
+                  <img class="materialboxed" src=<%= @one_post.image_url %>>
                   </li>        
                   <% @one_post.post_images.each do |s| %>
                     <li>
-                    <img src="<%=s.avatar.url %>">
+                    <img class="materialboxed" src="<%=s.avatar.url %>">
                     </li>
                   <% end %>
                   
@@ -29,13 +29,13 @@
               <% else %>
                 <li>
                   <!--이미지 안올렸을때-->
-                  <img src= <%= @one_post.image_url %>>
+                  <img class="materialboxed" src= <%= @one_post.image_url %>>
                 </li>
               <% end %>
             </ul>
           </div>
-
-        </div>
+         </div> 
+      
        
         <div class="card-content">
           

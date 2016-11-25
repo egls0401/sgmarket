@@ -3401,7 +3401,7 @@ $(document).ready(function(){
 
 
         // HammerJS, Swipe navigation
-
+/*
         // Touch Event
         var panning = false;
         var swipeLeft = false;
@@ -3497,6 +3497,8 @@ $(document).ready(function(){
             );
           }
         });
+        
+        */
 
         $this.on('sliderPause', function() {
           clearInterval($interval);

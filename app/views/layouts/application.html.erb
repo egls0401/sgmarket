@@ -5,6 +5,7 @@
    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -23,10 +24,24 @@
     .parallax-container {
       height: 650px;
     }
-    .slider .slides img {
-      height: auto;
-      width: auto;
+    
+    
+    /* Edit by Yoon */
+    .slider .slides li img {
+      /* 100% -> contain */
+      background-size: contain;
+      background-repeat: no-repeat;   
     }
+    
+    .slider .slides {
+      background-color: #000000;
+    }
+    .material-placeholder {
+      height: 100%;
+    }
+     
+    
+   
   </style>
 
     <!-- Bootstrap Core CSS -->
@@ -140,20 +155,34 @@
     <!-- Bootstrap Core JavaScript -->
     <!--<script src="js/bootstrap.min.js"></script>-->
   <script>
-   $(document).ready(function(){
-   $('.slider').slider();
-    });
+   
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+        
+    
+  $(document).ready(function(){
+    
+    $('.slider').slider();
+    $('.slider').slider('pause');
+
+    $('.indicator-item').on('click',function(){
+      $('.slider').slider('pause');
+    });    
+  });
     
    $(".button-collapse").sideNav();
   
-   $(document).ready(function() {
-  var viewportHeight = $(document).height();
-  $('main').css('min-height', viewportHeight - 150 ); // minus size of your header & footer
-  });
+   $(document).ready(function(){
+    var viewportHeight = $(document).height();
+    $('main').css('min-height', viewportHeight - 150 ); // minus size of your header & footer
+    });
   
   $(document).ready(function(){
       $('.parallax').parallax();
     });
+ 
+ 
   </script>
   
 </body>
