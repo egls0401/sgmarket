@@ -26,19 +26,14 @@
     }
     
     
-    /* Edit by Yoon */
-    .slider .slides li img {
-      /* 100% -> contain */
-      background-size: contain;
-      background-repeat: no-repeat;   
-    }
+  
     
-    .slider .slides {
-      background-color: #000000;
-    }
+    
     .material-placeholder {
       height: 100%;
     }
+    
+  
      
     
    
@@ -80,9 +75,7 @@
           <i class="material-icons"  style="color:#ffd54f">vpn_key</i><a href="/users/sign_in" class="center" style="color:#8c8c8c; font-weight:bold">로그인</a>
         <% end %>
       </div>
-  </div>
-  
-  
+  </div>  
   
   <div class="container">
   <!--Side nav로 해보자-->
@@ -162,27 +155,39 @@
         
     
   $(document).ready(function(){
-    
+    /* Edit by Yoon */
     $('.slider').slider();
     $('.slider').slider('pause');
 
     $('.indicator-item').on('click',function(){
       $('.slider').slider('pause');
     });    
+      
+    $('#modal1 .slider .slides li img').each(function(idx, obj) {
+      var img = $(obj).css('background-image');
+      console.log(idx, ":",img);
+      $(obj).attr('src', img.slice(5,-2));
+    });
+
+    $('.modal-trigger').leanModal();
   });
-    
+  
+ 
+  $(document).ready(function(){  
    $(".button-collapse").sideNav();
+  });
   
    $(document).ready(function(){
     var viewportHeight = $(document).height();
     $('main').css('min-height', viewportHeight - 150 ); // minus size of your header & footer
     });
   
+  
   $(document).ready(function(){
       $('.parallax').parallax();
     });
  
- 
+   
   </script>
   
 </body>

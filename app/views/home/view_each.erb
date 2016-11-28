@@ -1,3 +1,21 @@
+<style>
+    /* Edit by Yoon */
+    .slider .slides li img {
+      /* 100% -> contain */
+      background-size: contain;
+      background-repeat: no-repeat;   
+    }
+    
+    .slider .slides {
+      background-color: #FFFFFF;
+    }
+    
+    .material-placeholder {
+      height: 100%;
+    }
+
+</style>
+
 <div id="body" style="width: 100%;">
   <div class="row">
     <div class="col s12 m6 offset-m3">
@@ -49,8 +67,8 @@
           <ul class="collection">
             <li class="collection-item avatar">
               <% if current_user.nil? %>
-                <!--<% img_path_writer = @one_post.user.userpic + '.png' %>
-                <img src="<%= image_path img_path_writer %>" class="circle">
+                <!--<%# img_path_writer = @one_post.user.userpic + '.png' %>
+                <img src="<%#= image_path img_path_writer %>" class="circle">
                 --><!--<i class="large material-icons; circle">hi</i>-->
 
                 <!--<span class="title" style="font-weight:bold; color:grey">???</span>-->
