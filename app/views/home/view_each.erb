@@ -89,6 +89,7 @@
             </li>
             <% end %>
           </ul>
+          
         </div>
         
         <div class="card-content">
@@ -116,7 +117,7 @@
           <form action="/home/reply_write" method="POST">
           
             <div class="form-group">
-              <label for="reply">댓글쓰기</label>
+              <label for="reply">댓글쓰기</label><br>
               <input type = "hidden" value = "<%= @one_post.id %>" name ="id_of_post">
                 <input name = "comment" style="width:70%" class="form-control" id="reply" placeholder="댓글을 입력해주세요">
                 <button type="submit" style="display:inline-block; background-color:#9e9e9e;" class="btn waves-effect waves-light;">입력</button>
