@@ -1,42 +1,5 @@
 <style>
-    /* Edit by Yoon */
-    #modal1 .slider,
-    #modal1 .slider .slides {
-      height: 100% !important;
-    }
-    #modal1 .slider .slides {
-      background-color: #ffffff;
-    }
     
-    #modal1 .slider .slides li img {
-      /* 100% -> contain */
-      background-size: contain;
-      background-repeat: no-repeat;   
-    
-    }
-    #modal1 .modal-fixed-footer .modal-content .slider{
-      height: 100% !important;
-    }
-    
-    #modal1 .modal-fixed-footer .modal-content .slider .slides {
-      background-color: #FFFFFF;
-      height: 100% !important;
-    }
- 
-    #modal1 .modal .modal-content{
-      height:100%;
-    }
-    
-    #modal1 .slider .slides li {
-      overflow: auto;
-    }
-    #modal1 .slider .slides li img {
-      height: auto;
-    }
-    
-    #modal1 .slider .indicators {
-      z-index: 100;
-    }
   
 </style>
 <!-- side nav랑 search bar -->
@@ -52,30 +15,7 @@
         <label for="icon_prefix">Search</label>
       </div>
       
-        <!-- Modal Trigger1 --><br>
-        <a class="col-md-1 col-md-offset-1 modal-trigger waves-effect btn" style="background-color:#e57373" href="#modal1">공지</a>
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal modal-fixed-footer">
-          <div class="modal-content">
-             <div class="slider"  >
-                <ul class="slides" >
-                  <li>
-                    <img src="<%=image_path("logo.png")%>"> 
-                  </li>
-                  <li>
-                    <img src="http://cfile29.uf.tistory.com/image/1203DC114B03F2D50558B8"> 
-                  </li>
-                  <li>
-                    <img src="<%=image_path("finished_pic.png")%>"> 
-                  </li>
-                </ul>
-             </div>
-          </div>
-    
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">확인</a>
-        </div>
-      </div>    
+        
     </div>
   </form>
   

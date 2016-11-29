@@ -28,7 +28,44 @@
       height: 100%;
     }
     
-  
+   /* Edit by Yoon */
+    #modal1 .slider,
+    #modal1 .slider .slides {
+      height: 100% !important;
+    }
+    #modal1 .slider .slides {
+      background-color: #ffffff;
+    }
+    
+    #modal1 .slider .slides li img {
+      /* 100% -> contain */
+      background-size: contain;
+      background-repeat: no-repeat;   
+    
+    }
+    #modal1 .modal-fixed-footer .modal-content .slider{
+      height: 100% !important;
+    }
+    
+    #modal1 .modal-fixed-footer .modal-content .slider .slides {
+      background-color: #FFFFFF;
+      height: 100% !important;
+    }
+ 
+    #modal1 .modal .modal-content{
+      height:100%;
+    }
+    
+    #modal1 .slider .slides li {
+      overflow: auto;
+    }
+    #modal1 .slider .slides li img {
+      height: auto;
+    }
+    
+    #modal1 .slider .indicators {
+      z-index: 100;
+    }
      
     
    
@@ -63,12 +100,36 @@
     <div class="row col" style="margin-bottom:10px">
      
       <div class="nav-wrapper" style="background-color:#ffffff; width: auto">
-        &nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons"  style="color:#4db6ac">mode_edit</i><a href="/home/write" style="color:#8c8c8c; font-weight:bold" class="center">글쓰기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="material-icons"  style="color:#4db6ac">mode_edit</i><a href="/home/write" style="color:#8c8c8c; font-weight:bold" class="center">글쓰기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       
+        <!-- Modal Trigger1 -->
+        <i class="material-icons"  style="color:#ef5350">comment</i><a  class="modal-trigger" href="#modal1" style="color:#8c8c8c; font-weight:bold">공지</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <% if current_user %>
           <i class="material-icons"  style="color:#ffd54f">input</i><a href="/users/sign_out" style="color:#8c8c8c; font-weight:bold">로그아웃</a>
         <% else %>
           <i class="material-icons"  style="color:#ffd54f">vpn_key</i><a href="/users/sign_in" class="center" style="color:#8c8c8c; font-weight:bold">로그인</a>
         <% end %>
+        
+        
+        
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal modal-fixed-footer">
+          <div class="modal-content">
+             <div class="slider"  >
+                <ul class="slides" >
+                  <li>
+                    <img src="<%=image_path("notification1.png")%>"> 
+                  </li>
+                </ul>
+             </div>
+          </div>
+    
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">확인</a>
+          </div>
+        </div>    
       </div>
   </div>  
   
