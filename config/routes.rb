@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'home/write'
   get 'home/complete'
   post 'home/complete' => 'home#complete'
-
+  get 'home/event'
   post 'home/write'
   get 'home/myinfo'
   
@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   get '/home/change_pic' => 'home#change_pic'
   
   get '/home/please' => 'home#please'
-
+  
   get '/home/chanha' => 'home#chanha'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

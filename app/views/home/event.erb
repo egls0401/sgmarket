@@ -1,0 +1,90 @@
+<style>
+    
+  
+</style>
+<!-- side nav랑 search bar -->
+<div class="row">
+  
+  <form class="col s12" style="height:73.5px;" action="/home/search">
+    <div class="row">
+      <a href="#" data-activates="slide-out" class="button-collapse col s1 left"><i class="material-icons" style="margin-top:10px; font-size:3.5rem; color:#e57373;">toc</i></a>
+      
+      <div class="input-field col s7 offset-s1" style="color:#e57373;">
+        <i class="material-icons prefix" style="margin-top:5px; color:#e57373;">search</i>
+        <input id="icon_prefix" type="text" class="validate" name="search">
+        <label for="icon_prefix">Search</label>
+      </div>
+      
+        
+    </div>
+  </form>
+
+</div>
+  
+
+<i class="material-icons"  style="color:#4db6ac">store</i><a href="/home/index" style="color:#8c8c8c; font-weight:bold" class="center">홈으로 돌아가기</a>
+<br><br>
+
+<div class="row" id="box-search" >
+  <% @post=Post.find(68) %>
+    <div class="col-sm-12 col-md-6">
+      <!-- change -->
+      <div class = "thumbnail hovereffect">
+       
+          <img class="img-responsive" src="<%=@post.post_images[0].avatar.url%>" style="height:100%"> 
+     
+         <div class="overlay">
+           <h2><%=@post.title%></h2>
+           <a class="info" href="/view_each/<%=@post.id%>">둘러보기</a>
+        </div>
+      </div>
+    </div>
+
+    <% @post=Post.find(7) %>
+    <div class="col-sm-12 col-md-6">
+      <!-- change -->
+      <div class = "thumbnail hovereffect">
+       
+          <img class="img-responsive" src="<%=@post.post_images[0].avatar.url%>" style="height:100%"> 
+     
+         <div class="overlay">
+           <h2><%=@post.title%></h2>
+           <a class="info" href="/view_each/<%=@post.id%>">둘러보기</a>
+        </div>
+      </div>
+    </div>
+
+    <% @post=Post.find(76) %>
+    <div class="col-sm-12 col-md-6">
+      <!-- change -->
+      <div class = "thumbnail hovereffect">
+       
+          <img class="img-responsive" src="<%=@post.post_images[0].avatar.url%>" style="height:100%"> 
+     
+         <div class="overlay">
+           <h2><%=@post.title%></h2>
+           <a class="info" href="/view_each/<%=@post.id%>">둘러보기</a>
+        </div>
+      </div>
+    </div>
+
+    <% @post=Post.find(1) %>
+    <div class="col-sm-12 col-md-6">
+      <!-- change -->
+      <div class = "thumbnail hovereffect">
+       
+          <img class="img-responsive" src="<%=@post.post_images[0].avatar.url%>" style="height:100%"> 
+     
+         <div class="overlay">
+           <h2><%=@post.title%></h2>
+           <a class="info" href="/view_each/<%=@post.id%>">둘러보기</a>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+ 
+
+
