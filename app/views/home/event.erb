@@ -25,66 +25,7 @@
 <i class="material-icons"  style="color:#4db6ac">store</i><a href="/home/index" style="color:#8c8c8c; font-weight:bold" class="center">홈으로 돌아가기</a>
 <br><br>
 
-<div class="row" id="box-search" >
-  <% @post=Post.find(68) %>
-    <div class="col-sm-12 col-md-6">
-      <!-- change -->
-      <div class = "thumbnail hovereffect">
-       
-          <img class="img-responsive" src="<%=@post.post_images[0].avatar.url%>" style="height:100%"> 
-     
-         <div class="overlay">
-           <h2><%=@post.title%></h2>
-           <a class="info" href="/view_each/<%=@post.id%>">둘러보기</a>
-        </div>
-      </div>
-    </div>
-
-    <% @post=Post.find(7) %>
-    <div class="col-sm-12 col-md-6">
-      <!-- change -->
-      <div class = "thumbnail hovereffect">
-       
-          <img class="img-responsive" src="<%=@post.post_images[0].avatar.url%>" style="height:100%"> 
-     
-         <div class="overlay">
-           <h2><%=@post.title%></h2>
-           <a class="info" href="/view_each/<%=@post.id%>">둘러보기</a>
-        </div>
-      </div>
-    </div>
-
-    <% @post=Post.find(76) %>
-    <div class="col-sm-12 col-md-6">
-      <!-- change -->
-      <div class = "thumbnail hovereffect">
-       
-          <img class="img-responsive" src="<%=@post.post_images[0].avatar.url%>" style="height:100%"> 
-     
-         <div class="overlay">
-           <h2><%=@post.title%></h2>
-           <a class="info" href="/view_each/<%=@post.id%>">둘러보기</a>
-        </div>
-      </div>
-    </div>
-
-    <% @post=Post.find(1) %>
-    <div class="col-sm-12 col-md-6">
-      <!-- change -->
-      <div class = "thumbnail hovereffect">
-       
-          <img class="img-responsive" src="<%=@post.post_images[0].avatar.url%>" style="height:100%"> 
-     
-         <div class="overlay">
-           <h2><%=@post.title%></h2>
-           <a class="info" href="/view_each/<%=@post.id%>">둘러보기</a>
-        </div>
-      </div>
-    </div>
-
-</div>
-
-
+ <span style="font-size:13pt;color:#8c8c8c; font-weight:bold">현재 진행중인 이벤트가 없습니다</span>
  
 
 

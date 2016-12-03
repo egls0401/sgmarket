@@ -1,5 +1,5 @@
 <div class="container" style="margin-top:50px">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name) ) do |f| %>
     
     <div class="field">
       <p><%= f.label :아이디 %><em>아이디는 한글,영문 모두 가능합니다.</em><br />
@@ -47,10 +47,12 @@
     if (x.indexOf("@sogang.ac.kr") == -1)
     {
       alert("서강대 이메일로 가입해주세요");
-      return false;}
+      return false;
+    }
     else
     {
-      return true;}
+      return true;
+    }
     
 }
 </script>

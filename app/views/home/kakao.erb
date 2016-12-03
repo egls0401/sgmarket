@@ -31,7 +31,7 @@
     </div>
   
     <div class="actions">
-      <a class="waves-effect waves-light btn deep-orange lighten-2"><%= f.submit "가입하기" %></a>
+      <a class="waves-effect waves-light btn deep-orange lighten-2"><%= f.submit "가입하기", onclick: "return showConfirmMsg();" %></a>
     </div>
     <div class="field">
       <br>
@@ -42,3 +42,11 @@
   
   
 </div>
+
+
+<script>
+function showConfirmMsg() {
+  // alert("!!!!!");
+  return true;
+}
+</script>

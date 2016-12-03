@@ -5,6 +5,25 @@ class MktimageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
+  
+  version :detail do
+    process :resize_to_fit => [600, 10000]
+  end
+  version :main do
+      process :resize_to_fill => [240, 180] ,:if => :horizontal?
+      process :resize_to_fill => [240, 320]  ,:if => :vertical?
+  end
+
+  def horizontal?(new_file)
+    image = MiniMagick::Image.open(self.file.file)
+    true if image[:height] < image[:width]
+  end
+  
+  def vertical?(new_file)
+    image = MiniMagick::Image.open(self.file.file)
+    true if image[:height] > image[:width]
+  end
+
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
