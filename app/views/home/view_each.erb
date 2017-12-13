@@ -3,13 +3,13 @@
       .slider .slides li img {
         /* 100% -> contain */
         background-size: contain;
-        background-repeat: no-repeat;   
+        background-repeat: no-repeat;
       }
-      
+
       .slider .slides {
         background-color: #FFFFFF;
       }
-      
+
       .material-placeholder {
         height: 100%;
       }
@@ -21,7 +21,7 @@
     <div class="col s12 m6 offset-m3">
       <div class="card">
         <div class="card-image" >
-         
+
          <div class="slider" >
            <ul class="slides">
           <!--have to change this part -->
@@ -36,13 +36,13 @@
                   <!--거래완료-->
                   <li>
                   <img class="materialboxed" src=<%= @one_post.image_url %>>
-                  </li>        
+                  </li>
                   <% @one_post.post_images.each do |s| %>
                     <li>
                     <img class="materialboxed" src="<%=s.avatar.url %>">
                     </li>
                   <% end %>
-                  
+
                 <% end %>
               <% else %>
                 <li>
@@ -52,12 +52,12 @@
               <% end %>
             </ul>
           </div>
-         </div> 
-      
-       
+         </div>
+
+
         <div class="card-content">
-          
-              <span class="card-title" style="color:#8c8c8c; font-weight:bold; display:inline"><%=@one_post.title %></span> 
+
+              <span class="card-title" style="color:#8c8c8c; font-weight:bold; display:inline"><%=@one_post.title %></span>
               <p style="text-align:right; font-size:10px; display:inline">&nbsp;<%= @one_post.created_at.in_time_zone("Asia/Seoul").strftime("%m월%d일 %H시") %></p>
               </nobr>
               <p><%=simple_format @one_post.content %></p><br>
@@ -76,22 +76,22 @@
                 <p>로그인 하시면 판매자의 연락처를 확인할 수 있습니다</p>
                 <p ><a href="/users/sign_in" style-"color:orange">로그인 하기</p></a>
               <% else %>
-                <% img_path_writer = @one_post.user.userpic + '.png' %>
-               
+                <% img_path_writer = @one_post.user. + '.png' %>
+
                 <img src="<%= image_path img_path_writer %>" class="circle">
                 <!--<i class="large material-icons; circle">hi</i>-->
-  
+
                 <span class="title" style="font-weight:bold; color:grey"><%= @one_post.user.username %></span>
-  
+
                 <p><%= @one_post.contact %> <br>
                 <a href="/writer_post/<%= @one_post.id %>" style="color:#7986cb">다른 게시물</a>
               </p>
             </li>
             <% end %>
           </ul>
-          
+
         </div>
-        
+
         <div class="card-content">
            <% @one_post.tags.each do |x| %>
             <% unless  x.name.nil? || x.name.blank? %>
@@ -104,18 +104,18 @@
 
         <div class="card-action">
           <% @one_post.replies.each do |x| %>
-           <% img_path_reply = x.user.userpic + '.png' %>
-           <p> <img src="<%=image_path img_path_reply %>" class="circle" style="width:30px; height:auto;"> &nbsp;<span style="font-weight:bold; color:#7986cb"><%= x.user.username%></span>&nbsp;&nbsp;&nbsp;<span style="font-weight:bold; color:#8c8c8c; display:inline"><%= x.content %></span> 
+           <%# img_path_reply = x.user.userpic + '.png' %>
+           <p> <img src="<%=image_path img_path_reply %>" class="circle" style="width:30px; height:auto;"> &nbsp;<span style="font-weight:bold; color:#7986cb"><%= x.user.username%></span>&nbsp;&nbsp;&nbsp;<span style="font-weight:bold; color:#8c8c8c; display:inline"><%= x.content %></span>
            <% if user_signed_in? && (current_user.id==x.user_id || current_user.admin?) %>
            <a href="/delete_reply/<%=x.id%>">[x]</a>
            <% end %>
-          
+
            </p>
-           
+
            <p style="text-align:right; font-size:9px; "><%= x.created_at.in_time_zone("Asia/Seoul").strftime("%m월%d일 %H시") %></p>
           <% end %>
           <form action="/home/reply_write" method="POST">
-          
+
             <div class="form-group">
               <label for="reply">댓글쓰기</label><br>
               <input type = "hidden" value = "<%= @one_post.id %>" name ="id_of_post">
@@ -124,21 +124,21 @@
             </div>
           </form>
         </div>
-  
-        
+
+
         <div class="card-action" style="text-align:right">
           <% if user_signed_in? && current_user==@one_post.user %>
             <a href="/password_finish/<%= @one_post.id %>">거래완료</button>
             <a href="/password_delete/<%=@one_post.id %>">삭제</a>
             <a href="/password_edit/<%= @one_post.id %>">수정</a>
           <% end %>
-          
+
           <!--admin일때 수정/삭제하기-->
-      
+
           <% unless current_user.nil?%>
           <% if current_user.admin? %>
             <a href="/delete/<%= @one_post.id %>">삭제</a>
-          <% end %> 
+          <% end %>
           <% end %>
           <a href="/home/index">목록</a>
         </div>

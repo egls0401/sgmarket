@@ -1,19 +1,19 @@
 Rails.application.configure do
-  
+
   config.action_mailer.default_url_options = { :host => 'mysgmarket.com' }
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
+ #
+ # ActionMailer::Base.smtp_settings = {
+ #      :address        => "smtp.mailgun.org",
+ #      :port           => 587,
+ #      :authentication => :plain,
+ #      :domain         => ENV['MAILER_DOMAIN'],
+ #      :user_name      => ENV['MAILER_USERNAME'],
+ #      :password       => ENV['MAILER_PASSWORD']
+ #  }
 
- ActionMailer::Base.smtp_settings = {
-      :address        => "smtp.mailgun.org",
-      :port           => 587,
-      :authentication => :plain,
-      :domain         => ENV['MAILER_DOMAIN'],
-      :user_name      => ENV['MAILER_USERNAME'],
-      :password       => ENV['MAILER_PASSWORD']
-  }
-  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
